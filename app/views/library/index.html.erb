@@ -1,0 +1,6 @@
+<h1>Component Library</h1>
+<% if @library.components.any? %>
+<%= render partial: "componentpattern", locals: { components: @library.components }  %>
+<% else %>
+<p>No html components found at <code>/app/view/<%= ComponentLibrary.root_directory %></code></p>
+<% end %>

@@ -1,0 +1,21 @@
+<% components.each do |component| %>
+<p>
+  <% component.paths.each do |path| %>
+    /<%= link_to path[:name], component_path(path[:path]) %>
+  <% end %>
+</p>
+<div class="pattern" id="<%= component.render.parameterize %>">
+  <div class="pattern--code">
+    <input type="checkbox" id="view_html_<%= component.render.parameterize %>" class="pattern--toggle-checkbox">
+    <label for="view_html_<%= component.render.parameterize %>" class="pattern--toggle-label">View Source</labeL>
+    <div class="pattern--language-markup">
+      <code class="language-markup"><%= component.raw %></code>
+    </div>
+  </div>
+  <div class="pattern--preview">
+    <div class="pattern--layout">
+      <%= render component.render %>
+    </div>
+  </div>
+</div>
+<% end %>
