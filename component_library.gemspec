@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ComponentLibrary::VERSION
   s.authors     = ["Rich Archer"]
   s.email       = ["rich.archer@unboxedconsulting.com"]
-  s.homepage    = "http://ubxd.com"
+  s.homepage    = "https://github.com/richarcher/component_library"
   s.summary     = "Summary of ComponentLibrary."
   s.description = "Description of ComponentLibrary."
   s.license     = "MIT"
