@@ -1,7 +1,7 @@
 module ComponentLibrary
   class Engine < ::Rails::Engine
     initializer "component_library.assets.precompile" do |app|
-      app.config.assets.precompile += %w(_component_library/library.css _component_library/library.js)
+      app.config.assets.precompile += [ComponentLibrary.stylesheet_path, ComponentLibrary.javascript_path]
     end
 
     config.generators do |g|
