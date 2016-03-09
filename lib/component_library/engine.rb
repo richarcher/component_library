@@ -1,7 +1,7 @@
 module ComponentLibrary
   class Engine < ::Rails::Engine
     initializer "component_library.assets.precompile" do |app|
-      app.config.assets.precompile += %w(library.css library.js prism.js)
+      app.config.assets.precompile += %w(_component_library/library.css _component_library/library.js)
     end
 
     config.generators do |g|
