@@ -11,4 +11,12 @@ module ComponentLibrary
   def self.setup(&block)
     yield self
   end
+
+  def self.stylesheet_path
+    '_component_library/library'
+  end
+
+  def self.javascript_path
+    '_component_library/library'
+  end
 end
