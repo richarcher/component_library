@@ -11,15 +11,11 @@ Add this line to your application's Gemfile:
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install component_library
+    $ bundle exec rails generate component_library:install components
 
 ## Usage
 
-* After installation create directory `app/views/component`
-* create a component inside (eg: `_icons.html.erb`) and add some HTML markup
+* create a component inside (eg: `app/views/components/_icons.html.erb`)
 * add markup to component
 * visit /components in a browser
 
