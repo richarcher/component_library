@@ -1,8 +1,8 @@
-= Component Library
+# Component Library
 
 Easily create your own HTML/CSS/JS component library.
 
-== Installation
+## Installation
 
 Add this line to your application's Gemfile:
 
