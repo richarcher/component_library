@@ -1,0 +1,10 @@
+Description:
+    Explain the generator
+
+Example:
+    rails generate component_library:install components
+
+    This will create:
+        config/initializers/component_library.rb
+        app/views/layouts/component_library.html.erb
+        app/views/components/_headers.html.erb

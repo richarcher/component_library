@@ -1,8 +1,8 @@
-= Component Library
+# Component Library
 
 Easily create your own HTML/CSS/JS component library.
 
-== Installation
+## Installation
 
 Add this line to your application's Gemfile:
 
@@ -11,19 +11,15 @@ Add this line to your application's Gemfile:
 And then execute:
 
     $ bundle
+    $ bundle exec rails generate component_library:install components
 
-Or install it yourself as:
+## Usage
 
-    $ gem install component_library
-
-== Usage
-
-* After installation create directory `app/views/component`
-* create a component inside (eg: `_icons.html.erb`) and add some HTML markup
+* create a component inside (eg: `app/views/components/_icons.html.erb`)
 * add markup to component
 * visit /components in a browser
 
-== Overrideable defaults
+## Overrideable defaults
 
 By default the component library will assume to use the application layout and CSS file (`application.html.erb` & `application.css`), in addition to some basic styles added by the gem itself. If you wish to override this feature and use a different stylesheet, change the root file path, or the url the library routes to, these can be configued inside an initializer.
 
@@ -37,7 +33,7 @@ By default the component library will assume to use the application layout and C
 
 If you want to use a totally different layout for your component library, simply create a new layout named `component_library.html.erb` in your layouts directory and change there as appropriate.
 
-== Contributing
+## Contributing
 
 1. Fork it ( https://github.com/richarcher/component_library/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
