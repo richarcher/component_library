@@ -10,11 +10,11 @@ Gem::Specification.new do |s|
   s.authors     = ["Rich Archer"]
   s.email       = ["rich.archer@unboxedconsulting.com"]
   s.homepage    = "https://github.com/richarcher/component_library"
-  s.summary     = "Summary of ComponentLibrary."
-  s.description = "Description of ComponentLibrary."
+  s.summary     = "Create .erb partials of HTML markup to document your reusable CSS and JS components for other developers; and create prototypes to see how they function and look within your existing ecosystem."
+  s.description = "Easily create your own HTML/CSS/JS component library"
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_development_dependency "sqlite3"
