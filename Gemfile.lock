@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    component_library (0.0.4)
+    component_library (0.0.5)
       rails (>= 4.0.0)
       sass (~> 3.4, >= 3.4.21)
 

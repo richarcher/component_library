@@ -7,8 +7,8 @@ require "component_library/version"
 Gem::Specification.new do |s|
   s.name        = "component_library"
   s.version     = ComponentLibrary::VERSION
-  s.authors     = ["Rich Archer"]
-  s.email       = ["rich.archer@unboxedconsulting.com"]
+  s.authors     = ["Rich Archer", "Grant Speelman"]
+  s.email       = ["rich@richarcher.co.uk", "grantspeelman@gmail.com"]
   s.homepage    = "https://github.com/richarcher/component_library"
   s.summary     = "Create .erb partials of HTML markup to document your reusable CSS and JS components for other developers; and create prototypes to see how they function and look within your existing ecosystem."
   s.description = "Easily create your own HTML/CSS/JS component library"
