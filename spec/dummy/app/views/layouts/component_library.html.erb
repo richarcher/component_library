@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Component</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag ComponentLibrary.stylesheet_path, media: 'all' %>
+</head>
+<body>
+
+  <%= yield %>
+
+  <%= javascript_include_tag ComponentLibrary.javascript_path %>
+</body>
+</html>

@@ -54,11 +54,6 @@ RSpec.describe ComponentLibrary::LibraryController, :type => :controller do
       expect(assigns(:library).components.length).to eq 1
     end
 
-    it "assigns 2 headings component files to @library.components" do
-      get_show('headings')
-      expect(assigns(:library).components.length).to eq 2
-    end
-
     it "returns a 404 if no components are found" do
       expect {
         get_show('headings/_foo.html', 'erb')
