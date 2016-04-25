@@ -1,5 +1,5 @@
 <% components.each do |component| %>
-<p>
+<p class="pattern--title">
   <% component.paths.each do |path| %>
     /<%= link_to path[:name], component_path(path[:path]) %>
   <% end %>
