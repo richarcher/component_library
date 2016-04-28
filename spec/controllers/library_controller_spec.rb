@@ -21,6 +21,10 @@ RSpec.describe ComponentLibrary::LibraryController, :type => :controller do
       expect(assigns(:library)).to_not be_nil
     end
 
+    it "assigns @component_template" do
+      expect(assigns(:component_template)).to eq 'componentpattern'
+    end
+
     it "assigns all component files to @library.components" do
       expect(assigns(:library).components.length).to eq 3
     end
@@ -28,9 +32,9 @@ RSpec.describe ComponentLibrary::LibraryController, :type => :controller do
   end
 
   describe "GET #show" do
-    def get_show(url, format=nil)
+    def get_show(url, format=nil, view=nil)
       @url = url
-      get :show, path: url, format: format
+      get :show, path: url, format: format, view: view
     end
 
     it "responds successfully with an HTTP 200 status code" do
@@ -54,11 +58,22 @@ RSpec.describe ComponentLibrary::LibraryController, :type => :controller do
       expect(assigns(:library).components.length).to eq 1
     end
 
+    it "assigns @component_template" do
+      get_show('_buttons.html', 'erb')
+      expect(assigns(:component_template)).to eq 'componentpattern'
+    end
+
+    it "assigns @component_template with isolation pattern if paramter is provided" do
+      get_show('_buttons.html', 'erb', 'isolation')
+      expect(assigns(:component_template)).to eq 'isolationpattern'
+    end
+
     it "returns a 404 if no components are found" do
       expect {
         get_show('headings/_foo.html', 'erb')
       }.to raise_error(ActionController::RoutingError)
     end
+
 
   end
 end

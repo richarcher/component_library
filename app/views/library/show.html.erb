@@ -1,2 +1,1 @@
-<h1><%= @library.title.capitalize %></h1>
-<%= render partial: "componentpattern", locals: { components: @library.components }  %>
+<%= render partial: @component_template, locals: { library: @library }  %>
