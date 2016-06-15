@@ -2,24 +2,13 @@
 <html>
 <head>
   <title>Component</title>
-  <%= stylesheet_link_tag ComponentLibrary.stylesheet_path, ComponentLibrary.configuration.application_css, media: 'all' %>
+  <%= stylesheet_link_tag ComponentLibrary.stylesheet_path, @configuration[:application_css], media: 'all' %>
   <%= javascript_include_tag ComponentLibrary.javascript_path %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-<code>javascript_path = <%= ComponentLibrary.javascript_path %></code>
-<br>
-<code>stylesheet_path = <%= ComponentLibrary.stylesheet_path %></code>
-<br>
-<code>root_directory = <%= ComponentLibrary.configuration.root_directory %></code>
-<br>
-<code>root_path = <%= ComponentLibrary.configuration.root_path %></code>
-<br>
-<code>application_css = <%= ComponentLibrary.configuration.application_css %></code>
-<br>
-
+<%= @configuration.inspect %>
 <%= yield %>
 
 </body>

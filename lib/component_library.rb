@@ -33,12 +33,25 @@ module ComponentLibrary
     attr_accessor :root_directory
     attr_accessor :root_path
     attr_accessor :application_css
+    attr_accessor :multiconfigure
 
     def initialize
       @root_path = "components"
       @root_directory = "component"
       @application_css = "application"
     end
+
+    def root_paths
+      return multiconfigure.map{|mc| mc[:root_path]} if multiconfigure.present?
+      [@root_path]
+    end
+
+    def for(filter)
+      return multiconfigure.select {|mc| mc[:root_path] == filter } if multiconfigure.present?
+      [{ :root_path => @root_path, :root_directory => @root_directory, :application_css => @application_css }]
+    end
+
+
   end
 
 end
