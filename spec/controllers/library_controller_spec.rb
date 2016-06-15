@@ -4,29 +4,39 @@ RSpec.describe ComponentLibrary::LibraryController, :type => :controller do
 
   describe "GET #index" do
 
-    before :each do
-      get :index
+    def get_index(view=nil)
+      get :index, view: view
     end
 
     it "responds successfully with an HTTP 200 status code" do
+      get_index
       expect(response).to be_success
       expect(response).to have_http_status(200)
     end
 
     it "renders the index template" do
+      get_index
       expect(response).to render_template("index")
     end
 
     it "assigns @library" do
+      get_index
       expect(assigns(:library)).to_not be_nil
     end
 
     it "assigns @component_template" do
+      get_index
       expect(assigns(:component_template)).to eq 'componentpattern'
     end
 
     it "assigns all component files to @library.components" do
+      get_index
       expect(assigns(:library).components.length).to eq 3
+    end
+
+    it "assigns @component_template with isolation pattern if paramter is provided" do
+      get_index('isolation')
+      expect(assigns(:component_template)).to eq 'isolationpattern'
     end
 
   end

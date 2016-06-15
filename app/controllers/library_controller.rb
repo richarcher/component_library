@@ -3,7 +3,7 @@ class LibraryController < ApplicationController
 
   def index
     dir = Dir.glob("#{Rails.root}/app/views/#{ComponentLibrary.root_directory}/**/*.erb").sort
-    @component_template = 'componentpattern'
+    @component_template = params[:view] == 'isolation' ? 'isolationpattern' : 'componentpattern'
     @library = Library::Librarian.new(dir, ComponentLibrary.root_directory)
   end
 
