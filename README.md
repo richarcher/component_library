@@ -24,7 +24,7 @@ And then execute:
 By default the component library will assume to use the application layout and CSS file (`application.html.erb` & `application.css`), in addition to some basic styles added by the gem itself. If you wish to override this feature and use a different stylesheet, change the root file path, or the url the library routes to, these can be configued inside an initializer.
 
 ```
-  ComponentLibrary.setup do |config|
+  ComponentLibrary.configure do |config|
     config.application_css = "new_application_css"
     config.root_path       = "new_component_library"
     config.root_directory  = "new_view_directory"

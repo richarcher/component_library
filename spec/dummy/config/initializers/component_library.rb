@@ -1,3 +1,3 @@
-ComponentLibrary.setup do |config|
+ComponentLibrary.configure do |config|
   config.root_directory = "theme_components"
 end
