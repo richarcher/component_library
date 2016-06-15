@@ -1,0 +1,18 @@
+@import "application";
+
+html {
+  font-size: 18px;
+}
+h1, h2, h3, h4, h5 {
+  color: goldenrod;
+}
+.btn {
+  background-color: cadetblue;
+  color: whitesmoke;
+  &:hover {
+    background-color: scale-color(cadetblue, $lightness: -20%);
+  }
+}
+.h1, .h2, .h3, .h4 {
+  color: cadetblue;
+}
