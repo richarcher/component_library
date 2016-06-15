@@ -2,6 +2,12 @@ require "rails_helper"
 
 RSpec.describe ComponentLibrary::LibraryController, :type => :controller do
 
+
+  before do
+    allow(ComponentLibrary.configuration).to receive(:root_path).and_return('components')
+    allow(ComponentLibrary.configuration).to receive(:root_directory).and_return('theme_components')
+  end
+
   describe "GET #index" do
 
     def get_index(view=nil)
