@@ -1,14 +1,15 @@
 module Library
   class Librarian
 
-    def initialize(files, rootDirectory, title=nil)
+    def initialize(files, configuration, title=nil)
       @files = files
-      @rootDirectory = rootDirectory
+      @rootDirectory = configuration[:root_directory]
+      @rootPath = configuration[:root_path]
       @title = title
     end
 
     def components
-      @files.map{ |file| Component.new(file, @rootDirectory) }
+      @files.map{ |file| Component.new(file, @rootDirectory, @rootPath) }
     end
 
     def title

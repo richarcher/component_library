@@ -1,8 +1,9 @@
 module Library
   class Component
-    def initialize(file, rootDirectory)
+    def initialize(file, rootDirectory, rootPath)
       @file = file
       @rootDirectory = rootDirectory
+      @rootPath = rootPath
     end
 
     def raw
@@ -35,7 +36,7 @@ module Library
       while fileArray.length > 0 do
         response.unshift prepareHash(fileArray)
       end
-      h = {path: ".", name: "components"}
+      h = {path: ".", name: @rootPath}
       response.unshift h
     end
 

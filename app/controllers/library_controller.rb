@@ -6,15 +6,13 @@ class LibraryController < ApplicationController
 
   def index
     dir = Dir.glob("#{Rails.root}/app/views/#{@configuration[:root_directory]}/**/*.erb").sort
-
-    @library = Library::Librarian.new(dir, @configuration[:root_directory])
+    @library = Library::Librarian.new(dir, @configuration)
   end
 
   def show
     suffix = params[:format] == 'erb' ? ".erb" : "/**/*.erb"
     dir = Dir.glob("#{Rails.root}/app/views/#{@configuration[:root_directory]}/#{params[:path]}#{suffix}").sort
-
-    @library = Library::Librarian.new(dir, @configuration[:root_directory], params[:path])
+    @library = Library::Librarian.new(dir, @configuration, params[:path])
 
     raise ActionController::RoutingError.new('Not Found') if @library.components.empty?
   end

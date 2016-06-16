@@ -2,5 +2,5 @@
 <% if @library.components.any? %>
 <%= render partial: @component_template, locals: { library: @library }  %>
 <% else %>
-<p>No html components found at <code>/app/view/<%= ComponentLibrary.configuration.root_directory %></code></p>
+<p>No html.erb components found at <code>/app/views/<%= @configuration[:root_directory] %></code></p>
 <% end %>

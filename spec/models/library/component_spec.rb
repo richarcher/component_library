@@ -5,7 +5,7 @@ RSpec.describe Library::Component, :type => :model do
   before :each do
     @filename = '/bar/foo/bar/fileroot/views/_file.html'
     @content = '<h1>heading</h1>'
-    @component = Library::Component.new(@filename, 'fileroot')
+    @component = Library::Component.new(@filename, 'fileroot', 'pathroot')
     allow(File).to receive(:open).with(@filename).and_return( StringIO.new(@content) )
   end
 
@@ -19,7 +19,7 @@ RSpec.describe Library::Component, :type => :model do
 
   it "correctly responds to .paths" do
     expect(@component.paths.length).to eq 3
-    expect(@component.paths[0]).to match({path: ".", name: "components"})
+    expect(@component.paths[0]).to match({path: ".", name: "pathroot"})
     expect(@component.paths[1]).to match({path: "views", name: "views"})
     expect(@component.paths[2]).to match({path: "views/_file.html", name: "_file.html"})
   end
