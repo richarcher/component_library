@@ -33,6 +33,47 @@ By default the component library will assume to use the application layout and C
 
 If you want to use a totally different layout for your component library, simply create a new layout named `component_library.html.erb` in your layouts directory and change there as appropriate.
 
+## Multiconfiguration option
+
+It is possible to allow multiple instances of a component library to be created - for example if you wanted to use the same components, but test different stylesheets at different urls:
+
+```
+  ComponentLibrary.configure do |config|
+    config.multiconfigure = [
+      {
+        root_directory: "theme_components",
+        root_path: "theme_1_components",
+        application_css: "theme_1_css"
+      },
+      {
+        root_directory: "theme_components",
+        root_path: "theme_2_components",
+        application_css: "theme_2_css"
+      }
+    ]
+  end
+```
+
+Or if you want entirely different component libraries - for example a library for your public facing site, one for the admin section, and one for another part of your site...:
+
+```
+  ComponentLibrary.configure do |config|
+    config.multiconfigure = [
+      {
+        root_directory: "public_components",
+        root_path: "public-components",
+        application_css: "application_css"
+      },
+      {
+        root_directory: "admin_components",
+        root_path: "admin-components",
+        application_css: "admin_css"
+      },
+      ...
+    ]
+  end
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/richarcher/component_library/fork )
