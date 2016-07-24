@@ -1,4 +1,4 @@
-# Component Library
+# Component Library [![Build Status](https://travis-ci.org/richarcher/component_library.svg?branch=master)](https://travis-ci.org/richarcher/component_library)
 
 Easily create your own HTML/CSS/JS component library.
 
